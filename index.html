@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica Avançada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: black;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background-color: black;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            background:;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav a {
+            color: black;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav a:hover {
+            color: purple;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .menu-items {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-items a {
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+            }
+
+            .menu-items {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-items a {
+                margin: 10px 0;
+            }
+
+            .menu-items.active {
+                display: flex;
+            }
+        }
+
+        .content {
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.31);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 2px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+         /* Video de fundo */
+         .background-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            opacity: 0.7; /* Ajuste a opacidade conforme necessário */
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            var menuItems = document.getElementById('menuItems');
+            menuItems.classList.toggle('active');
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Video de fundo -->
+    <video class="background-video" autoplay muted loop playsinline>
+        <source src="assets/maquina.mp4" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+
+    <div class="header">
+        <h1>Robótica Avançada</h1>
+        <p>Explorando o futuro da tecnologia robótica</p>
+    </div>
+
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu-items" id="menuItems">
+            <a href="#home">Início</a>
+            <a href="#about">Sobre</a>
+            <a href="#projects">Projetos</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contato</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <section id="home">
+            <div class="card">
+                <h2>Bem-vindo à Robótica Avançada</h2>
+                <p>Seu portal para as últimas inovações e pesquisas no campo da robótica. Explore nossos projetos, leia nossos artigos e junte-se a nós na jornada para o futuro.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="card">
+                <h2>Sobre Nós</h2>
+                <p>Somos uma equipe de entusiastas de robótica dedicados a explorar e desenvolver novas tecnologias. Nossa missão é compartilhar conhecimento e inspirar a próxima geração de engenheiros e cientistas.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="card">
+                <h2>Projetos</h2>
+                <p>Confira alguns dos projetos incríveis em que estamos trabalhando:</p>
+                <ul>
+                    <li>Robôs autônomos para agricultura</li>
+                    <br>
+                    <li>Assistentes robóticos para cuidados com idosos</li>
+                    <br>
+                    <li>Robótica de enxame para exploração espacial</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="card">
+                <h2>Blog</h2>
+                <p>Leia os últimos artigos e atualizações do nosso blog:</p>
+                <ul>
+                    <li><a href="#">A evolução dos robôs autônomos</a></li>
+                    <br>
+                    <li><a href="#">Como a IA está transformando a robótica</a></li>
+                    <br>
+                    <li><a href="#">O futuro da robótica na exploração espacial</a></li>
+                    <br>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="card">
+                <h2>Contato</h2>
+                <p>Tem alguma dúvida ou quer saber mais? Entre em contato conosco:</p>
+                <p>Email: <a href="mailto:contato@roboticaavancada.com">contato@roboticaavancada.com</a></p>
+                <p>Telefone: (11) 1234-5678</p>
+                <p>Endereço: Av. Inovações, 123 - São Paulo, SP</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Robótica Avançada. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
